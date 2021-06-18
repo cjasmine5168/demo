@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>wine shop</title>
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/zoom.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fontawesome/css/all.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+
+    <style>
+        header {
+            background-image: url("img/nav.png") !important;
+            background-size: 100% !important;
+        }
+
+        section {
+            background-image: url("img/paper.png") !important;
+            background-size: 100% !important;
+        }
+
+        main {
+            background-image: url("img/background.png");
+            background-size: 100%;
+        }
+
+        table {
+            background-image: url("img/paper.png") !important;
+            background-size: 100% !important;
+        }
+
+        .card {
+            background-color: #D9CCBD;
+        }
+
+        footer {
+            background-image: url("img/nav.png") !important;
+            background-size: 100% !important;
+        }
+
+        strong {
+            font-family: 'Courgette', cursive;
+            font-size: larger;
+            letter-spacing: .5rem;
+            color: black;
+        }
+
+        tbody {
+            background-color: rgba(175, 175, 175, 0.418) !important;
+        }
+
+        .cart-item {
+            width: 20%;
+            height: auto;
+        }
+
+        h1,
+        h5 {
+            color: #C8A86B;
+        }
+
+        tbody th {
+            color: #A67569;
+        }
+
+        .table tbody tr td {
+            vertical-align: middle;
+        }
+
+        thead {
+            color: #D9CCBD !important;
+        }
+
+        .mybtn {
+            border-radius: .25rem !important;
+        }
+
+        .myhr {
+            color: #633e35;
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="navbar navbar-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-9">
+                        <a href="index.html" class="navbar-brand d-flex align-items-center">
+                            <img src="img/logo.svg" class="img-fluid" width="50%" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 pe-3">
+                        <input type="text" class="form-control2" id="recipient-name" placeholder="Search">
+                    </div>
+                    <div class="col-2">
+                        <button type="button" class="btn">
+                            <i class="fas fa-search fa-lg" style="color: rgba(255,255,255,0.55);"></i>
+                        </button>
+                    </div>
+                    <div class="col-2">
+                        <a href="cart.html">
+                            <button type="button" class="btn">
+                                <i class="fas fa-shopping-cart fa-lg" style="color: rgba(255,255,255,0.55);"></i>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="col-2">
+                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="fas fa-user-alt fa-lg" style="color: rgba(255,255,255,0.55);"></i>
+                        </button>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="exampleModalLabel">Log in</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <form>
+                                        <div class="modal-body">
+                                            <div class="mb-3">
+                                                <label for="recipient-name" class="col-form-label">Username:</label>
+                                                <input type="text" class="form-control" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="recipient-name" class="col-form-label">Password:</label>
+                                                <input type="text" class="form-control" id="recipient-name2" required>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="sign_up.html">
+                                                <button type="button" class="btn btn-secondary text-center"
+                                                    style="letter-spacing: .3rem;">SIGN UP</button>
+                                            </a>
+                                            <button class="btn btn-primary text-center" style="letter-spacing: .3rem;"
+                                                type="submit">SUBMIT</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <button class="navbar-toggler" onclick="openNav()">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+
+                </div>
+                <div id="myNav" class="overlay">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <div class="overlay-content">
+                        <nav class="navbar navbar-expand-lg rounded" aria-label="Twelfth navbar example">
+                            <div class="container-fluid">
+                                <div class="navbar-collapse justify-content-md-center" id="navbarsExample10">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                            <a class="nav-link" aria-current="page" href="about.html">About Us</a>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
+                                                role="button" aria-expanded="false">Wines</a>
+                                            <ul class="dropdown-menu text-center" style="min-width: 16rem;">
+                                                <li><a class="dropdown-item" href="product.html">All Wines</a></li>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li><a class="dropdown-item" href="red.html">Red Wine</a></li>
+                                                <li><a class="dropdown-item" href="white.html">White Wine</a></li>
+                                                <li><a class="dropdown-item" href="sparkling.html">Sparkling Wine</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
+                                                role="button" aria-expanded="false">Country</a>
+                                            <ul class="dropdown-menu text-center" style="min-width: 16rem;">
+                                                <li><a class="dropdown-item" href="Italy.html">Italy</a></li>
+                                                <li><a class="dropdown-item" href="french.html">French</a></li>
+                                                <li><a class="dropdown-item" href="germany.html">Germany</a></li>
+                                                <li><a class="dropdown-item" href="argentina.html">Argentina</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="usa.html">United States</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" aria-current="page" href="member.html">Member
+                                                Profile</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main class="px-8 py-5">
+        <section>
+            <div class="container">
+                <div class="row py-6 px-5">
+                    <div class="col-7">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active" data-bs-interval="4000">
+                                    <span class="zoom" id="ex1">
+                                        <img src="img/red/ar1-1.png" class="d-block w-100 zoom" alt="...">
+                                    </span>
+                                </div>
+                                <div class="carousel-item" data-bs-interval="4000">
+                                    <span class="zoom" id="ex2">
+                                        <img src="img/red/ar1-1.png" class="d-block w-100" alt="...">
+                                    </span>
+                                </div>
+                                <div class="carousel-item" data-bs-interval="4000">
+                                    <span class="zoom" id="ex3">
+                                        <img src="img/red/ar1-1.png" class="d-block w-100" alt="...">
+                                    </span>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <p class="text-end">按住圖片可看詳細外觀</p>
+                    </div>
+                    <div class="col-5 p-1">
+                        <div>
+                            <h1 class="text-center mb-4">Moët Impérial</h1>
+                            <h4 class="text-end mb-4">--Moët &Chandon</h4>
+                            <hr>
+                            <p class="lh-base fs-4 mb-5">明亮清新的果香氣息，誘人的口感和優雅的成熟度，富有青蘋果及橘類水果的濃郁香氣，並擁有如花朵般的清爽氣息</p>
+                            <h4 class="mb-4">NT$ 970</h4>
+                            <div class="input-group mb-3 w-75">
+                                <button class="btn btn-primary me-2 mybtn" type="button">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <input type="text" class="form-control" style="border-radius: .25rem;">
+                                <button class="btn btn-primary ms-2 mybtn" type="button">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                                <p class="mb-0 text-center fs-5 ms-2 py-3">(庫存：3)</p>
+                            </div>
+                            <div class="d-grid gap-2 mt-5 d-md-flex justify-content-md-end">
+                                <button class="btn btn-secondary me-md-2" type="button">Add to Cart</button>
+                                <button class="btn btn-primary" type="button">Buy it Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container pt-6 px-5">
+                <ul class="nav nav-tabs fs-3" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link2 active" id="home-tab" data-bs-toggle="tab" data-bs-target="#details"
+                            type="button" role="tab" aria-controls="home" aria-selected="true"
+                            style="background-color:#D9CCBD;">Details</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link2" id="profile-tab" data-bs-toggle="tab" data-bs-target="#introduction"
+                            type="button" role="tab" aria-controls="profile" aria-selected="false"
+                            style="background-color:#D9CCBD;">Introduction</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link2" id="contact-tab" data-bs-toggle="tab" data-bs-target="#brand"
+                            type="button" role="tab" aria-controls="contact" aria-selected="false"
+                            style="background-color:#D9CCBD;">Brand</button>
+                    </li>
+                </ul>
+                <div class="tab-content px-3" id="myTabContent">
+                    <div class="tab-pane fade show active" id="details" role="tabpanel" aria-labelledby="home-tab">
+                        <table class="table">
+                            <tbody class="text-center fs-4">
+                                <tr>
+                                    <td>分類</td>
+                                    <td>Champagne 香檳</td>
+                                    <td>產地</td>
+                                    <td>法國 French</td>
+                                </tr>
+                                <tr>
+                                    <td>品牌</td>
+                                    <td>Moët & Chandon 酩悅</td>
+                                    <td>年分</td>
+                                    <td>NV</td>
+                                </tr>
+                                <tr>
+                                    <td>酒精度</td>
+                                    <td>12.0%</td>
+                                    <td>容量</td>
+                                    <td>375ml</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="introduction" role="tabpanel" aria-labelledby="profile-tab">
+                        <table class="table">
+                            <tbody class="text-start text-start fs-4">
+                                <tr>
+                                    <td class="px-5"><i class="fas fa-wine-glass-alt"></i></td>
+                                    <td class="px-5">顏色：帶有優雅的金黃色澤，時而透露綠寶的光澤</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-5"><i class="fas fa-wine-glass-alt"></i></td>
+                                    <td class="px-5">香氣：香氣活潑，透露出清新白果香(蘋果、梨子、白桃)，柑橘果香，淡淡的檸檬花與優雅的奶油餅乾及新鮮堅果香</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-5"><i class="fas fa-wine-glass-alt"></i></td>
+                                    <td class="px-5">風味：味蕾表現非常性感，濃郁又滑順的口感，圓潤細緻的境界，最後帶有清新爽口的感覺，達到將香檳最完美平衡的境界</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="brand" role="tabpanel" aria-labelledby="contact-tab">
+                        <table class="table">
+                            <tbody class="text-start text-start fs-4">
+                                <tr>
+                                    <td class="px-4">Moët & Chandon Brut Impérial 是酩悅香檳的旗艦商品，自1869年創立以來，Brut
+                                        Impérial是最具代表性也最成功推廣至全球的單品。它完整呈現出三種香檳葡萄品種所代表的多樣性，表現出香檳區特有的濃郁性，讓全世界的香檳愛好者為之傾倒。
+
+                                        Brut Impérial 最具代表性的特徵就是它活潑生動的果香，在味蕾上的表現又相當的優雅細膩。 Brut Impérial
+                                        匯集約200不同葡萄園所生產的優質葡萄。它以三種香檳葡萄和諧調配而成。釀酒師不惜使用珍貴的典藏酒維持香檳品質(使用量20%~30%不等)。</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <hr class="m-5">
+            <div class="container">
+                <h1 class="text-center px-5 mb-0">Best-selling</h1>
+                <div class="row py-6 px-5">
+                    <div class="col-md-4">
+                        <a href="">
+                            <div class="card mx-5">
+                                <img src="img/red/ar1-1.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">Grand Vintage Rosé</h5>
+                                    <h6 class="text-end" style="color: black;">NT$ 970</h6>
+                                    <hr class="myhr">
+                                    <p class="card-text" style="color: black;">2007年通過Antinori家族的經驗與該地區表現出的高葡萄栽培質量之間的相互作用而製作出的，選用Chardonnay,
+                                        Pinot
+                                        Nero, and Pinot Bianco三種葡萄創造出這款氣泡酒</p>
+                                    <hr class="myhr">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="">
+                            <div class="card mx-5">
+                                <img src="img/red/ar1-1.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">Contessa Maggi</h5>
+                                    <h6 class="text-end" style="color: black;">NT$ 970</h6>
+                                    <hr class="myhr">
+                                    <p style="color: black;" class="card-text">2007年通過Antinori家族的經驗與該地區表現出的高葡萄栽培質量之間的相互作用而製作出的，選用Chardonnay,
+                                        Pinot
+                                        Nero, and Pinot Bianco三種葡萄創造出這款氣泡酒</p>
+                                    <hr class="myhr">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="">
+                            <div class="card mx-5">
+                                <img src="img/red/ar1-1.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">Rosé Impérial</h5>
+                                    <h6 class="text-end" style="color: black;">NT$ 970</h6>
+                                    <hr class="myhr">
+                                    <p style="color: black;" class="card-text">2007年通過Antinori家族的經驗與該地區表現出的高葡萄栽培質量之間的相互作用而製作出的，選用Chardonnay,
+                                        Pinot
+                                        Nero, and Pinot Bianco三種葡萄創造出這款氣泡酒</p>
+                                    <hr class="myhr">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="mx-5 mb-4 mt-0">
+            <div class="container px-5">
+                <h1 class="text-center mb-4">Comments</h1>
+                <div class="input-group mb-3">
+                    <span class="input-group-text me-3 btn-secondary" style="border-radius: .25rem;">匿名</span>
+                    <input type="text" class="form-control3" style="border-radius: .25rem;" placeholder="匿名投稿" aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                <div class="input-group ">
+                    <textarea class="form-control" rows="1" aria-label="With textarea"
+                        placeholder="write done your comment......"></textarea>
+                    <button class="btn btn-primary mx-3" style="border-radius: .25rem;" type="button">Post</button>
+                </div>
+            </div>
+            <hr class="m-5">
+            <div class="container px-6">
+                <div class="row row-cols-2">
+                    <div class="col"><i class="fas fa-male fa-3x"></i></div>
+                    <div class="col text-end">2021/05/21</div>
+                    <div class="col fs-3">@Zac</div>
+                    <div class="col"></div>
+                    <div class="col">
+                        <p>由開胃菜到甜品都是完美的配合!!</p>
+                    </div>
+                </div>
+                <div class="row row-cols-2">
+                    <div class="col"><i class="fas fa-female fa-3x"></i></div>
+                    <div class="col text-end">2021/05/21</div>
+                    <div class="col fs-3">@Zac</div>
+                    <div class="col"></div>
+                    <div class="col">
+                        <p>由開胃菜到甜品都是完美的配合!!</p>
+                    </div>
+                </div>
+                <div class="row row-cols-2">
+                    <div class="col"><i class="fas fa-male fa-3x"></i></div>
+                    <div class="col text-end">2021/05/21</div>
+                    <div class="col fs-3">@Zac</div>
+                    <div class="col"></div>
+                    <div class="col">
+                        <p>由開胃菜到甜品都是完美的配合!!</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="container py-1">
+            <div class="row">
+                <div class="col-sm">
+                    <ul class="list-group container px-6">
+                        <li class="list-group-item align-items-center text-center border-0 px-6"
+                            style="font-weight: bolder;">
+                            CONTACT US
+                        </li>
+                        <div>
+                            <li class="list-group-item align-items-center border-0 px-6">
+                                <i class="fas fa-map-marker-alt fa-lg ps-5"></i>
+                                <span class="">地址：320桃園市中壢區中北路200號</span>
+                            </li>
+                            <li class="list-group-item  align-items-center border-0 px-6">
+                                <a href="https://im.cycu.edu.tw/" style>
+                                    <i class="fas fa-school fa-lg ps-5"></i>
+                                    <span>學系：中原大學資訊管理學系</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item align-items-center border-0 px-6">
+                                <a href="tel:+88632655401">
+                                    <i class="fas fa-phone fa-lg ps-5"></i>
+                                    <span>電話：+88632655401</span>
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+                <div class="col-sm text-center">
+                    <img class="img-fluid" width="160" height="160" src="img/4.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            $('#ex1').zoom({ on: 'grab' });
+            $('#ex2').zoom({ on: 'grab' });
+            $('#ex3').zoom({ on: 'grab' });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <script src="js/nav.js"></script>
+
+</body>
+
+</html>
