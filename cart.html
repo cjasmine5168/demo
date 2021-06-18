@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Register</title>
+    <title>wine shop</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -19,22 +19,17 @@
         }
 
         main {
-            background-image: url("img/background.png") !important;
-            background-size: 100% !important;
-            margin: 0px !important;
-            padding: 0px !important;
-            color: #8E354A;
+            background-image: url("img/background.png");
+            background-size: 100%;
         }
 
-        main .container {
+        table {
             background-image: url("img/paper.png") !important;
-            box-shadow: 4px 4px 12px rgb(0, 0, 0);
-            background-size: 100% !important;
-
+            background-size: 100%;
         }
 
-        main p {
-            color: black;
+        .card {
+            background-image: url("img/itemback.png");
         }
 
         footer {
@@ -49,10 +44,27 @@
             color: black;
         }
 
+        .cart-item {
+            width: 20%;
+            height: auto;
+        }
+
         h2,
         h5,
         h6 {
             color: #C8A86B;
+        }
+
+        tbody th {
+            color: #A67569;
+        }
+
+        .table tbody tr td {
+            vertical-align: middle;
+        }
+
+        thead {
+            color: #D9CCBD !important;
         }
     </style>
 
@@ -181,78 +193,68 @@
     </header>
 
     <main>
-        <section class="p-7">
-            <div class="container p-5 fs-6">
-                <div class="row">
-                    <h2 class="text-center mb-3" style="letter-spacing: .3rem; ">Sing Up</h2>
-                    <form data-toggle="validator" role="form" class="px-4">
-                        <div class="row px-5">
-                            <div class="mb-1 px-6">
-                                <label for="inputAccount">Account</label>
-                                <input type="text" class="form-control" id="inputAccount" placeholder="Cina1234"
-                                    required>
-                            </div>
-                            <div class="mb-4 px-6">
-                                <label for="inputPassword">Password</label>
-                                <input type="password" class="form-control mb-1" placeholder="Password" required>
-                                <label for=""></label>
-                                <input type="password" class="form-control" placeholder="Confirm(again)" required>
-                            </div>
+        <section class="p-4">
+            <div class="m-5">
+                <!-- Product photo -->
+                <div class="row m-2 bg">
+                    <div>
+                        <h1 class="text-center my-3" style="letter-spacing: .3rem; color:#D9CCBD">Cart</h1>
+                        <div class="m-3" style="box-shadow: 4px 4px 12px rgb(0, 0, 0);">
+                            <table class="table table-hover table-striped">
+                                <thead class="table-dark fs-4">
+                                    <tr>
+                                        <th>No.</th>
+                                        <td>Item</td>
+                                        <td>Quantity</td>
+                                        <td>Unit Price</td>
+                                        <td>subtotal</td>
+                                        <td>Delet</td>
+                                    </tr>
+                                </thead>
 
-                            <div class="mb-1 px-6">
-                                <label for="inputName">Name</label>
-                                <input type="text" class="form-control" id="inputName" placeholder="Cina Saffary"
-                                    required>
-                            </div>
-                            <div class="mb-1 px-6">
-                                <label for="inputPhone">Phone</label>
-                                <input type="text" class="form-control" id="inputPhone" placeholder="0912345678"
-                                    required>
-                            </div>
-                            <div class="mb-1 px-6">
-                                <label for="inputDate">Birthday</label>
-                                <input type="date" class="form-control " id="inputDate" value="1995-01-12" required>
-                            </div>
-                            <div class="mb-1 px-6">
-                                <label for="inputEmail">Email</label>
-                                <input type="email" class="form-control" id="inputEmail" placeholder="cina@gmail.com"
-                                    required>
-                            </div>
-                            <div class="mb-1 px-6">
-                                <label for="inputAddress">Address</label>
-                                <input type="text" class="form-control" id="inputAddress" placeholder="Taipei" required>
-                            </div>
+                                <tbody>
+                                    <tr>
+                                        <th class="fs-4">1.</th>
+                                        <td><img src="img/red/ar1.png" class="img-fluid cart-item"></td>
+                                        <td>1</td>
+                                        <td>970</td>
+                                        <td>970</td>
+                                        <td><button class="btn btn-default" title="刪除">
+                                                <i class="fas fa-trash-alt fa-2x"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="fs-4">2.</th>
+                                        <td><img src="img/sparkling/ec1.png" class="img-fluid cart-item"></td>
+                                        <td>2</td>
+                                        <td>1100</td>
+                                        <td>2200</td>
+                                        <td><button class="btn btn-default" title="刪除">
+                                                <i class="fas fa-trash-alt fa-2x"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="fs-4">3.</th>
+                                        <td><img src="img/white/ew3.png" class="img-fluid cart-item"></td>
+                                        <td>1</td>
+                                        <td>1000</td>
+                                        <td>1000</td>
+                                        <td><button class="btn btn-default" title="刪除">
+                                                <i class="fas fa-trash-alt fa-2x"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="continer px-5 mt-3 fs-6">
-                            <div class="px-5">
-                                <label for="inputGender">Gender</label>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="inputGender">
-                                        Male
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="inputGender" checked>
-                                        Female
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="inputGender">
-                                        No gender
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group mx-5 ">
-                            <button type="submit"
-                                class="btn btn-primary text-center  float-end m-3 px-5">Submit</button>
-                            <button type="reset"
-                                class="btn btn-secondary text-center  float-end m-3 px-5">Reset</button>
-                        </div>
-                    </form>
+                        <div class="text-end my-4 me-5 fs-3" style="letter-spacing: .2rem; color: #D9CCBD;">Total Price
+                            :
+                            NT$4170</div>
+                        <button class="btn btn-primary text-center float-end m-1 px-4 fs-5"
+                            style="letter-spacing: .3rem;" type="submit">Submit</button>
+                    </div>
                 </div>
             </div>
         </section>

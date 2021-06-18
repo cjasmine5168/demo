@@ -23,10 +23,18 @@
             background-size: 100% !important;
             margin: 0px !important;
             padding: 0px !important;
+            color: #8E354A;
         }
 
-        .card {
-            background-image: url("img/itemback.png");
+        main .container {
+            background-image: url("img/paper.png") !important;
+            box-shadow: 4px 4px 12px rgb(0, 0, 0);
+            background-size: 100% !important;
+
+        }
+
+        main p {
+            color: black;
         }
 
         footer {
@@ -39,6 +47,12 @@
             font-size: larger;
             letter-spacing: .5rem;
             color: black;
+        }
+
+        h2,
+        h5,
+        h6 {
+            color: #C8A86B;
         }
     </style>
 
@@ -167,180 +181,79 @@
     </header>
 
     <main>
-
-        <!-- Red -->
-
-        <section class="pt-3 text-center">
-            <div class="container">
+        <section class="p-7">
+            <div class="container p-5 fs-6">
                 <div class="row">
-                    <h1 style="color: white;text-decoration: underline;">Italy</h1>
+                    <h2 class="text-center mb-3" style="letter-spacing: .3rem; ">Change Your Profile</h2>
+                    <form data-toggle="validator" role="form" class="px-4">
+                        <div class="row px-5">
+                            <div class="col-6 px-6">
+                                <label for="inputAccount">Account</label>
+                                <p>Cina1234</p>
+                                <input type="text" class="form-control" placeholder="New Password" required>
+                            </div>
+                            <div class="col-6 px-6">
+                                <label for="inputPassword">Password</label>
+                                <p>c*********1</p>
+                                <input type="password" class="form-control" placeholder="Confirm" required>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row px-5">
+                            <div class="mb-1 px-6">
+                                <label for="inputName">Name</label>
+                                <input type="text" class="form-control" id="inputName" placeholder="Cina Saffary"
+                                    required>
+                            </div>
+                            <div class="mb-1 px-6">
+                                <label for="inputPhone">Phone</label>
+                                <input type="text" class="form-control" id="inputPhone" placeholder="0912345678"
+                                    required>
+                            </div>
+                            <div class="mb-1 px-6">
+                                <label for="inputDate">Birthday</label>
+                                <input type="date" class="form-control " id="inputDate" value="1995-01-12" required>
+                            </div>
+                            <div class="mb-1 px-6">
+                                <label for="inputEmail">Email</label>
+                                <input type="email" class="form-control" id="inputEmail" placeholder="cina@gmail.com"
+                                    required>
+                            </div>
+                            <div class="mb-1 px-6">
+                                <label for="inputAddress">Address</label>
+                                <input type="text" class="form-control" id="inputAddress" placeholder="Teipei" required>
+                            </div>
+                        </div>
+                        <div class="px-5 fs-6">
+                            <div class="px-5">
+                                <label for="inputGender">Gender</label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="inputGender" required>Male
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="inputGender" checked required>Femal
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="inputGender" required>No gender
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container px-6 my-3">
+                            <a href="member.html"><button
+                                    class="btn btn-success text-center  float-start m-1 px-5">Back</button></a>
+                            <button type="submit" class="btn btn-primary text-center float-end m-1 px-5">Submit</button>
+                            <button type="reset"
+                                class="btn btn-secondary text-center  float-end m-1 px-5">Reset</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </section>
-        <section class="py-3">
-            <div class="container">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    <a href="product_detail.html">
-                        <div class="col py-3">
-                            <div class="card shadow-sm">
-                                <div class="container text-center">
-                                    <img src="img/red/ar1.png" class="img-fluid py-3" width="150" height="auto"
-                                        alt="red/ar1">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">BRAND : Zuccardi Valle de Uco</h5>
-                                    <h5 class="card-title">NAME : ZUCCARDI Q MALBEC</h5>
-                                    <p class="card-text">
-                                        深寶石紅色澤，酒體帶有成熟濃厚深色水果香味，經橡木桶醇化後，帶有煙草及巧克力的味道，強烈滿足飽滿的口感，令人驚嘆這從水晶般的藍天覆蓋的美酒。</p>
-                                    <p class="card-text">NT$ 2659</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="product_detail.html">
-                        <div class="col py-3">
-                            <div class="card shadow-sm">
-                                <div class="container text-center">
-                                    <img src="img/red/ar2.png" class="img-fluid py-3" width="150" height="auto"
-                                        alt="red/ar1">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">BRAND : Zuccardi Valle de Uco</h5>
-                                    <h5 class="card-title">NAME : ZUCCARDI Q CONCRETO MALBEC</h5>
-                                    <p class="card-text">特殊的發酵方式-採Paraje
-                                        Altamira的石灰質土壤從中發酵，隨著時間推移，風味層層堆疊，呈深濃的牡丹色，擁有令人難以置信的價值。
-                                    </p>
-                                    <p class="card-text">NT$ $1500</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="product_detail.html">
-                        <div class="col py-3">
-                            <div class="card shadow-sm">
-                                <div class="container text-center">
-                                    <img src="img/red/ar3.png" class="img-fluid py-3 img-ar3" width="150" height="auto"
-                                        alt="red/ar1">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">BRAND : Robert Mondavi</h5>
-                                    <h5 class="card-title">NAME : <span class="fs-6">CABERNET SAUVIGNON STAGS LEAP
-                                            DISTRICT</span></h5>
-                                    <p class="card-text">
-                                        加州宜人的天氣培養出最好的葡萄。黑莓、黑李子、紅櫻桃和活潑的香料在鼻尖飄蕩。在口感上，明亮可口的香草優雅地包裹在可愛的深色水果風味中。
-                                    </p>
-                                    <p class="card-text">NT$ $1500</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="product_detail.html">
-                        <div class="col py-3">
-                            <div class="card shadow-sm">
-                                <div class="container text-center">
-                                    <img src="img/red/ar4.png" class="img-fluid py-3" width="150" height="auto"
-                                        alt="red/ar1">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">BRAND : Robert Mondavi</h5>
-                                    <h5 class="card-title">NAME : PINOT NOIR NAPA VALLEY</h5>
-                                    <p class="card-text">
-                                        使用嬌貴優雅的黑皮諾，有著明亮的黑紅櫻桃香氣，加入蔓越莓般的熱情滋味將風味提升到另一個層次，最後化為新鮮肉豆蔻和森林大地複雜的氣息。</p>
-                                    <p class="card-text">NT$ $1500</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="product_detail.html">
-                        <div class="col py-3">
-                            <div class="card shadow-sm">
-                                <div class="container text-center">
-                                    <img src="img/red/ar5.png" class="img-fluid py-3" width="150" height="auto"
-                                        alt="red/ar1">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">BRAND : Robert Mondavi</h5>
-                                    <h5 class="card-title">NAME : <span class="fs-7">RESERVE TO KALON VINEYARD CABERNET
-                                            SAUVIGNON</span></h5>
-                                    <p class="card-text">新鮮黑莓、野生漿果蜜餞、黑醋栗、黑可可粉、香料和甜香草的複雜混合，酸度平衡，使其成為一款完美的周年紀念酒。向傳奇的Robert
-                                        Mondavi致敬。</p>
-                                    <p class="card-text">NT$ $3980</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="product_detail.html">
-                        <div class="col py-3">
-                            <div class="card shadow-sm">
-                                <div class="container text-center">
-                                    <img src="img/red/er1.png" class="img-fluid py-3" width="150" height="auto"
-                                        alt="red/ar1">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">BRAND : CHÂTEAU SMITH HAUT LAFITT</h5>
-                                    <h5 class="card-title">BRAND : CHÂTEAU SMITH HAUT LAFITT RED</h5>
-                                    <p class="card-text">成熟而誘人的黑醋栗、李子泥和黑莓蜜餞的味道在整個過程中佔據主導地位，同時伴隨著誘人的鹹味、甘草、溫暖的壤土和礦物質的味道。
-                                    </p>
-                                    <p class="card-text">NT$ $3980</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="product_detail.html">
-                        <div class="col py-3">
-                            <div class="card shadow-sm">
-                                <div class="container text-center">
-                                    <img src="img/red/er2.png" class="img-fluid py-3" width="150" height="auto"
-                                        alt="red/ar1">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">BRAND : Marchesi Antinori</h5>
-                                    <h5 class="card-title">BRAND : Badia a Passignano</h5>
-                                    <p class="card-text">
-                                        強烈的紅寶石紅葡萄酒，帶有紫羅蘭色的反射，黑櫻桃，草莓和覆盆子的香氣與典型的木質香氣完美融合。它充滿活力，甜美，並具有持久而美味的持久性。</p>
-                                    <p class="card-text">NT$ $1100</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="product_detail.html">
-                        <div class="col py-3">
-                            <div class="card shadow-sm">
-                                <div class="container text-center">
-                                    <img src="img/red/er3.png" class="img-fluid py-3" width="150" height="auto"
-                                        alt="red/ar1">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">BRAND : Marchesi Antinori</h5>
-                                    <h5 class="card-title">NAME : II Bruciato</h5>
-                                    <p class="card-text">Bruciato 是一款無需介紹的葡萄酒，它為將 Bolgheri
-                                        的知識傳播到全世界做出了貢獻。作為其領土上的標誌性葡萄酒，Tenuta Guado al Tasso 的 Bruciato 真的是一個神話！</p>
-                                    <p class="card-text">NT$ $1100</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="product_detail.html">
-                        <div class="col py-3">
-                            <div class="card shadow-sm">
-                                <div class="container text-center">
-                                    <img src="img/red/er4.png" class="img-fluid py-3" width="150" height="auto"
-                                        alt="red/ar1">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">BRAND : Marchesi Antinori</h5>
-                                    <h5 class="card-title">NAME : Pian delle Vigne</h5>
-                                    <p class="card-text">
-                                        明亮的紅寶石色，隨著葡萄酒在杯中甦醒逐漸綻放耀眼的光彩，散發著成熟水果的香氣，木瓜果醬和李子的香氣，散發著型花香和木材老化產生的烤製香氣。</p>
-                                    <p class="card-text">NT$ $799</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!--row-->
-            </div>
-            <!--container-->
         </section>
     </main>
 

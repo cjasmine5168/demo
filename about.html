@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Register</title>
+    <title>wine shop</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -12,29 +12,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
 
+ 
     <style>
         header {
             background-image: url("img/nav.png") !important;
             background-size: 100% !important;
-        }
-
-        main {
-            background-image: url("img/background.png") !important;
-            background-size: 100% !important;
-            margin: 0px !important;
-            padding: 0px !important;
-            color: #8E354A;
-        }
-
-        main .container {
-            background-image: url("img/paper.png") !important;
-            box-shadow: 4px 4px 12px rgb(0, 0, 0);
-            background-size: 100% !important;
-
-        }
-
-        main p {
-            color: black;
         }
 
         footer {
@@ -42,23 +24,81 @@
             background-size: 100% !important;
         }
 
-        strong {
-            font-family: 'Courgette', cursive;
-            font-size: larger;
-            letter-spacing: .5rem;
-            color: black;
+        main {
+            background-image: url("img/us-bg.png") !important;
+            background-size: 100% !important;
+            margin: 0px !important;
+            padding: 0px !important;
+            color: #8E354A;
+        }
+        
+        main .card {
+            background-image: url("img/paper.png");
+            background-size: 115% !important;
+            box-shadow:10px 10px 10px -5px rgba(0,0,0,0.5)
         }
 
-        h2,
-        h5,
-        h6 {
+        main .container {
+            padding: 0 16px;
+        }
+        
+        main .column {
+            float: left;
+            width: 25%;
+            padding: 10px;
+        }
+        main .button {
+            padding: 8px;
+            color: white;
+            background-color: #6b4750c2;
+            width: 100%;
+            border: none;
+        }
+        main .button:hover {
+            background-color: #555;
+        }
+        .Ename {
+            color: grey;
+            font-size: 14px;
+            margin: 1em;
+        }
+        h2,h5 {
             color: #C8A86B;
         }
+        main p{
+            color: black;
+        }
+        .change{
+            transition-duration: 1s;
+            opacity: 0;
+        }
+        .change:hover{
+            opacity: 1;
+        }
+        /* Clear floats after the columns */
+        .row:after {
+        content: "";
+        display: table;
+        clear: both;
+        }
+        @media screen and (max-width: 1000px){
+        .column {
+        width: 50%;   
+        }
+        }
+
+        @media screen and (max-width: 600px) {
+        .column {
+        width: 100%;
+        }
+    }
     </style>
+
 
 </head>
 
 <body>
+
     <header>
         <div class="navbar navbar-dark">
             <div class="container">
@@ -180,81 +220,64 @@
         </div>
     </header>
 
+    
     <main>
-        <section class="p-7">
-            <div class="container p-5 fs-6">
-                <div class="row">
-                    <h2 class="text-center mb-3" style="letter-spacing: .3rem; ">Sing Up</h2>
-                    <form data-toggle="validator" role="form" class="px-4">
-                        <div class="row px-5">
-                            <div class="mb-1 px-6">
-                                <label for="inputAccount">Account</label>
-                                <input type="text" class="form-control" id="inputAccount" placeholder="Cina1234"
-                                    required>
-                            </div>
-                            <div class="mb-4 px-6">
-                                <label for="inputPassword">Password</label>
-                                <input type="password" class="form-control mb-1" placeholder="Password" required>
-                                <label for=""></label>
-                                <input type="password" class="form-control" placeholder="Confirm(again)" required>
-                            </div>
-
-                            <div class="mb-1 px-6">
-                                <label for="inputName">Name</label>
-                                <input type="text" class="form-control" id="inputName" placeholder="Cina Saffary"
-                                    required>
-                            </div>
-                            <div class="mb-1 px-6">
-                                <label for="inputPhone">Phone</label>
-                                <input type="text" class="form-control" id="inputPhone" placeholder="0912345678"
-                                    required>
-                            </div>
-                            <div class="mb-1 px-6">
-                                <label for="inputDate">Birthday</label>
-                                <input type="date" class="form-control " id="inputDate" value="1995-01-12" required>
-                            </div>
-                            <div class="mb-1 px-6">
-                                <label for="inputEmail">Email</label>
-                                <input type="email" class="form-control" id="inputEmail" placeholder="cina@gmail.com"
-                                    required>
-                            </div>
-                            <div class="mb-1 px-6">
-                                <label for="inputAddress">Address</label>
-                                <input type="text" class="form-control" id="inputAddress" placeholder="Taipei" required>
-                            </div>
+        <section class="p-5">
+            <div class="row">
+                <h2 class="text-center mb-4" style="letter-spacing: .3rem ;text-shadow: black 0.1em 0.1em 0.4em">About us</h2>
+                <div class="column p-3" >
+                    <div class="card text-center">
+                        <img src="img/member-1.png" style="width:100%">
+                        <img class="change" src="img/member-1-1.png" style="width:100%; position: absolute;" > 
+                        <div class="container pt-3 fs-6">
+                            <h1>戈培蒙</h1>
+                            <p class="Ename">Ge Pei-Meng </p>
+                            <p>資管二甲</p>
+                            <p>後端開發人員</p>
+                            <p><input type="button" class="button" value="Contact" onClick="javascript:window.open('https://www.instagram.com/gepeimeng/', '_blank');"></p>
                         </div>
-                        <div class="continer px-5 mt-3 fs-6">
-                            <div class="px-5">
-                                <label for="inputGender">Gender</label>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="inputGender">
-                                        Male
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="inputGender" checked>
-                                        Female
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="inputGender">
-                                        No gender
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group mx-5 ">
-                            <button type="submit"
-                                class="btn btn-primary text-center  float-end m-3 px-5">Submit</button>
-                            <button type="reset"
-                                class="btn btn-secondary text-center  float-end m-3 px-5">Reset</button>
-                        </div>
-                    </form>
+                      </div>
                 </div>
-            </div>
+                <div class="column p-3">
+                    <div class="card text-center">
+                    <img src="img/member-2.png" style="width:100%">
+                    <img class="change" src="img/member-2-1.png" style="width:100%; position: absolute;" > 
+                    <div class="container  pt-3 fs-6">
+                      <h1>周寶琳 </h1>
+                      <p class="Ename">Chou Pau-Lin</p>
+                      <p>資管二甲</p>
+                      <p>後端開發人員</p>
+                      <p><input type="button" class="button" value="Contact" onClick="javascript:window.open('https://www.instagram.com/pauline0321/', '_blank');"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="column p-3" >
+                    <div class="card text-center">
+                    <img  src="img/member-3.png" style="width:100%">
+                    <img class="change" src="img/member-3-1.png" style="width:100%; position: absolute;" > 
+                    <div class="container pt-3 fs-6">
+                      <h1>彭昱瑄 </h1>
+                      <p class="Ename">Peng Yu-Hsuan</p>
+                      <p>資管二乙</p>
+                      <p>前端開發人員</p>
+                      <p><input type="button" class="button" value="Contact" onClick="javascript:window.open('https://www.instagram.com/xuan.1102_/', '_blank');"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="column p-3" >
+                    <div class="card text-center">
+                        <img  src="img/member-4.png" style="width:100%">
+                        <img class="change " src="img/member-4-1.png" style="width:100%; position: absolute;" > 
+                        <div class="container  pt-3 fs-6">
+                          <h1>張庭榕 </h1>
+                          <p class="Ename">Chang Ting-Jung</p>
+                          <p>資管二乙</p>
+                          <p>前端開發人員</p>
+                          <p><input type="button" class="button" value="Contact" onClick="javascript:window.open('https://www.instagram.com/jasmine_tingjung/', '_blank');"></p>
+                        </div>
+                      </div>
+                </div>
+              </div>        
         </section>
     </main>
 
@@ -294,10 +317,29 @@
         </div>
     </footer>
 
+    <script>
+        var myModal = document.getElementById('myModal')
+        var myInput = document.getElementById('myInput')
+
+        myModal.addEventListener('shown.bs.modal', function () {
+            myInput.focus()
+        })
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
-    <script src="js/nav.js"></script>
+    <script>
+        function openNav() {
+            document.getElementById("myNav").style.height = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.height = "0%";
+        }
+    </script>
+      
+  
+
 </body>
 
 </html>
