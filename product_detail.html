@@ -265,11 +265,11 @@
                             <p class="lh-base fs-4 mb-5">明亮清新的果香氣息，誘人的口感和優雅的成熟度，富有青蘋果及橘類水果的濃郁香氣，並擁有如花朵般的清爽氣息</p>
                             <h4 class="mb-4">NT$ 970</h4>
                             <div class="input-group mb-3 w-75">
-                                <button class="btn btn-primary me-2 mybtn" type="button">
+                                <button id="subtract" class="btn btn-primary me-2 mybtn" type="button">
                                     <i class="fas fa-minus"></i>
                                 </button>
-                                <input type="text" class="form-control" style="border-radius: .25rem;">
-                                <button class="btn btn-primary ms-2 mybtn" type="button">
+                                <input id="text" value="1" type="text" class="form-control text-center" style="border-radius: .25rem;">
+                                <button id="plus" class="btn btn-primary ms-2 mybtn" type="button">
                                     <i class="fas fa-plus"></i>
                                 </button>
                                 <p class="mb-0 text-center fs-5 ms-2 py-3">(庫存：3)</p>
@@ -363,10 +363,11 @@
                 <h1 class="text-center px-5 mb-0">Best-selling</h1>
                 <div class="row py-6 px-5">
                     <div class="col-md-4">
-                        <a href="">
+                        <a href="product_detail.html">
                             <div class="card mx-5">
                                 <img src="img/red/ar1-1.png" class="card-img-top" alt="...">
                                 <div class="card-body">
+                                    <h5 class="card-title text-center">NO.1</h5>
                                     <h5 class="card-title text-center">Grand Vintage Rosé</h5>
                                     <h6 class="text-end" style="color: black;">NT$ 970</h6>
                                     <hr class="myhr">
@@ -380,10 +381,11 @@
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a href="">
+                        <a href="product_detail.html">
                             <div class="card mx-5">
                                 <img src="img/red/ar1-1.png" class="card-img-top" alt="...">
                                 <div class="card-body">
+                                    <h5 class="card-title text-center">NO.2</h5>
                                     <h5 class="card-title text-center">Contessa Maggi</h5>
                                     <h6 class="text-end" style="color: black;">NT$ 970</h6>
                                     <hr class="myhr">
@@ -397,10 +399,11 @@
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a href="">
+                        <a href="product_detail.html">
                             <div class="card mx-5">
                                 <img src="img/red/ar1-1.png" class="card-img-top" alt="...">
                                 <div class="card-body">
+                                    <h5 class="card-title text-center">NO.3</h5>
                                     <h5 class="card-title text-center">Rosé Impérial</h5>
                                     <h6 class="text-end" style="color: black;">NT$ 970</h6>
                                     <hr class="myhr">
@@ -505,6 +508,26 @@
             $('#ex2').zoom({ on: 'grab' });
             $('#ex3').zoom({ on: 'grab' });
         });
+    </script>
+    <script>
+        window.onload = function () {
+            var plus = document.getElementById("plus");
+            var i = document.getElementById("text").value;
+            var subtract = document.getElementById("subtract");
+            plus.onclick = function () {
+                i++;
+                document.getElementById("text").value = i;
+            }
+            subtract.onclick = function () {
+                if (i > 0) {
+                    i--;
+                    document.getElementById("text").value = i;
+                } else {
+                    i = 0;
+                    document.getElementById("text").value = i;
+                }
+            }
+        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
